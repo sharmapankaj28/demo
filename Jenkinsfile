@@ -36,19 +36,28 @@ pipeline {
       }
     }
 
-    stage('Deploy App') {
-      agent {
-        docker {
-          image 'openjdk:8-jdk-alpine'
-        }
-      }
+    stage('Deploy bootJar') {
       steps {
         script {
-          echo 'Running Deploy App Stage ...'
-          sh 'docker build --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
+          echo 'Running bootRun ...'
+          sh 'java -jar build/libs/demo-0.0.1-SNAPSHOT.jar'
         }
       }
     }    
+    
+    //stage('Deploy App') {
+      //agent {
+        //docker {
+          //image 'openjdk:8-jdk-alpine'
+        //}
+      //}
+      //steps {
+        //script {
+          //echo 'Running Deploy App Stage ...'
+          //sh 'docker build --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
+        //}
+      //}
+    //}    
     
   }
 }
