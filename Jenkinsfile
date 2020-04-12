@@ -30,7 +30,8 @@ pipeline {
     stage('Deploy Stage') {
       steps {
         script {
-          echo 'Running Deploy Stage ...'
+          echo 'Running bootRun ...'
+          sh './gradlew bootRun'
         }
       }
     }
