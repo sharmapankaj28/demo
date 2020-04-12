@@ -37,6 +37,11 @@ pipeline {
     }
 
     stage('Deploy App') {
+      agent {
+        docker {
+          image 'openjdk:8-jdk-alpine'
+        }
+      }
       steps {
         script {
           echo 'Running Deploy App Stage ...'
