@@ -31,7 +31,6 @@ pipeline {
       steps {
         script {
           echo 'Running bootRun ...'
-          sh './gradlew bootRun'
         }
       }
     }
