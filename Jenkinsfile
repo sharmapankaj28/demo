@@ -22,7 +22,7 @@ pipeline {
       steps {
         script {
           echo 'Running Build Stage ...'
-          sh './gradlew bootRun'
+          sh './gradlew build'
         }
       }
     }
