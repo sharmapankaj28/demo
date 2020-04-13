@@ -41,8 +41,8 @@ pipeline {
         script {
           echo 'Running Docker build stage  ...'
           //sh 'export DOCKER_BUILDKIT=1'
-          //sh 'sudo docker build --progress=plain --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
-          sh 'winpty sudo docker build --progress=plain --build-arg JAR_FILE=build/libs/*.jar . bash'
+          sh 'sudo docker build --progress=plain --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
+          //sh 'winpty sudo docker build --progress=plain --build-arg JAR_FILE=build/libs/*.jar . bash'
         }
       }
     }    
