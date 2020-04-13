@@ -10,13 +10,13 @@ pipeline {
       }
     }
 
-    stage('Get Confirmation Stage') {
-      steps {
-        script {
-          input('Do you want to proceed?')
-        }
-      }
-    }
+    //stage('Get Confirmation Stage') {
+      //steps {
+        //script {
+          //input('Do you want to proceed?')
+        //}
+      //}
+    //}
 
     stage('Build Stage') {
       steps {
@@ -54,6 +54,7 @@ pipeline {
       steps {
         script {
           echo 'Docker build image App Stage ...'
+          sh 'docker --version'
           sh 'docker build --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
         }
       }
