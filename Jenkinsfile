@@ -40,7 +40,7 @@ pipeline {
       steps {
         script {
           echo 'Running Docker build stage  ...'
-          sh 'docker build --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
+          sh 'sudo docker build --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
         }
       }
     }    
