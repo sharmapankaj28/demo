@@ -40,35 +40,11 @@ pipeline {
       steps {
         script {
           echo 'Running Docker build stage  ...'
-          sh 'sudo docker build --progress=plain --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
+          sh 'sudo docker build --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
         }
       }
     }    
 
-    //stage('Deploy bootJar') {
-      //steps {
-        //script {
-          //echo 'Running bootRun ...'
-          //sh 'java -jar build/libs/demo-0.0.1-SNAPSHOT.jar'
-        //}
-      //}
-    //}    
-    
-    //stage('Docker build image App') {
-      //agent {
-        //docker {
-          //image 'openjdk:8-jdk-alpine'
-        //}
-      //}
-      //steps {
-        //script {
-          //echo 'Docker build image App Stage ...'
-          //sh 'java -version'
-          //sh 'docker --version'
-          //sh 'docker build --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
-        //}
-      //}
-    //}    
-    
+
   }
 }
