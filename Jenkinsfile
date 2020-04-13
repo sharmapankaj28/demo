@@ -1,5 +1,5 @@
 pipeline {
-  agent dockeragent
+  agent {dockeragent}
   stages {
 
     stage('Prepare Stage') {
