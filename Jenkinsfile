@@ -40,13 +40,11 @@ pipeline {
       steps {
         script {
           echo 'Running Docker build stage  ...'
-          //sh 'export DOCKER_BUILDKIT=1'
           sh 'sudo -n docker build --progress=plain --build-arg JAR_FILE=build/libs/*.jar -t springio/gs-spring-boot-docker .'
-          //sh 'winpty sudo docker build --progress=plain --build-arg JAR_FILE=build/libs/*.jar . bash'
+          sh 'sudo -n docker run --name Demo -p 9090:9090 -p 50001:50001 -d springio/gs-spring-boot-docker'
         }
       }
     }    
-
 
   }
 }
