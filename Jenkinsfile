@@ -46,5 +46,17 @@ pipeline {
       }
     }    
 
+    stage('Docker push to nexus repository') {
+      steps {
+        script {
+          echo 'Running Docker push to nexus repository  ...'
+          sh 'docker tag springio/gs-spring-boot-docker 172.17.0.1:8082/demo-springboot:1.0.1'
+          sh 'docker login -u admin -p admin123 172.17.0.1:8082'
+          sh 'docker push 172.17.0.1:8082/demo-springboot:1.0.1'
+          sh 'docker logout 172.17.0.1:8081'
+        }
+      }
+    }    
+    
   }
 }
