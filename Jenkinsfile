@@ -2,14 +2,6 @@ pipeline {
   agent { node { label 'dockeragent' } }
   stages {
 
-    stage('Prepare Stage') {
-      steps {
-        script {
-          echo 'Running Prepare Stage .............................................>>>>>>>>'
-        }
-      }
-    }
-
     //stage('Get Confirmation Stage') {
       //steps {
         //script {
