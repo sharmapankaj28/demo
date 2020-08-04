@@ -2,7 +2,7 @@ pipeline {
   agent { node { label 'dockeragent' } }
   stages {
 
-    //stage('Get Confirmation Stage') {
+    ////stage('Get Confirmation Stage') {
       //steps {
         //script {
           //input('Do you want to proceed?')
